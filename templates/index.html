@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="icon" href="static/images/logo.png">
+    <title>Mart in SecondS | Home Page</title>
+</head>
+<body>
+    <a href="/"><img class="logo" src="static/images/logo.png"></img></a>
+    <header>
+        <h1 id="center-header">MART IN SECONDS</h1>
+    </header>
+    <div id="menu">
+        <div id="menuIcon">&#9776;</div>
+        <div id="sidebar">
+            <a href="/owner" style="margin-bottom: 2rem;">Login to Owner Portal</a>
+            <a href="/about_us">About Us</a>
+        </div>
+
+    </div>
+    <div class="container">
+        <a href="/owner" id="owner">Login to Owner Portal</a>
+        <div class="options storeImagesV" onclick="location.href='/vegetables';">
+            <p>Vegetable Store</p>
+        </div>
+        <div class="options storeImagesC" onclick="location.href='/clothing';">
+            <p>Clothing Store</p>
+        </div>
+        <div class="options storeImagesE" onclick="location.href='/electronics';">
+            <p>Electronics Store</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='indexScript.js') }}"></script>
+</body>
+</html>

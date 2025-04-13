@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="icon" href="static/images/logo.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about_us.css') }}">
+    <title>Mart in Seconds | About Us</title>
+</head>
+<body>
+	<a href="/"><img class="logo" src="static/images/logo.png"></img></a>
+    <header>
+        <h1 id="center-header">MART IN SECONDS <span class="right-align">ABOUT US</span></h1>
+    </header>
+    <div class="container">
+	<button class="open-dialog-btn">Terms and Conditions</button>
+	<div id="dialog-box" class="dialog-box">
+		<span class="close-dialog-btn">&times;</span>
+		<h2>Terms and Conditions</h2>
+		<p>Here are our terms and conditions:</p>
+		<ul>
+			<li>Products are sold as-is and are not guaranteed to meet any specific requirements.</li>
+			<li>Returns are accepted within 30 days of purchase.</li>
+			<li>Refunds will be issued in the form of store credit.</li>
+			<li>We reserve the right to refuse service to anyone.</li>
+        </ul>
+	</div>
+
+    <p id="aboutUsText">==============================<br>
+        ______________________________<br>
+        <span style="font-size: 2rem;">ABOUT US</span><br>
+        ______________________________<br>
+    ============================== <br>         
+
+    _____________
+    INTRODUCTION:
+    _____________
+
+    Prateek MART IN SECONDS is a chain of Hypermarkets in India . 
+    following the business model of US-based Wal-Mart.
+    Prateek MART IN SECONDS offers you most of the items under one roof.
+    Containing three departments:
+         1.VEGETABLE STORE
+         2.CLOTHING STORE
+         3.ELECTRONICS STORE.
+         
+    Almost every necessary item is available in every store,
+    You just need to choose you taste and prefernce and thats it.<br><br>
+
+    ___________
+    STAFF:
+    ___________
+
+    Here in Prateek MART IN SECONDS we believe that "customer is god for us!"
+    and you are served in the best possible manner by our staff.
+    We are having a very efficient and well tempered staff here.
+    They are always ready to give you every info about the desired 
+    product.They are always ready to solve out every query of yours.<br><br>
+
+
+    __________________
+    QUALITY STANDARDS  
+    __________________
+
+    The best quality of all the products under every department is availed
+    to the customer. The electronics products having ISI marks, ECO marks, etc 
+    the certified products and well knowened branded products are only sold 
+    here.You do not need to bother about the quality if you are purchasing from
+    Prateek MART IN SECONDS. The best quality is only offered here to you.<br><br>
+
+
+    _____________________
+    ADDRESS AND CONTACT
+    _____________________
+
+    The headquarters(HQ) of PRATEEK'S MART IN SECONDS is in Ghaziabad(U.P.)
+    Dist :Ghaziabad and its branches are in Chennai, Shimla, Mumbai and in Delhi.
+    You can contact us here just dial on you phone:
+    TOLL FREE NUMBER AVAILABLE (24*7) >>> 9999****99<br><br>
+
+
+    _________
+    TAGLINE
+    _________
+
+    AAPNI DUKAN!!<br>
+    YOU ARE ALWAYS WELCOME”<br><br>
+
+    THANKYOU!! FOR VISITING</p>
+
+
+</div>
+           <script>
+            // Get the dialog box element
+            var dialogBox = document.getElementById("dialog-box");
+    
+            // Get the button that opens the dialog box
+            var openDialogBtn = document.querySelector(".open-dialog-btn");
+    
+            // Get the close button inside the dialog box
+            var closeDialogBtn = document.querySelector(".close-dialog-btn");
+    
+            // When the user clicks on the button, open the dialog box
+            openDialogBtn.onclick = function() {
+                dialogBox.style.display = "block";
+            }
+    
+            // When the user clicks on the close button, close the dialog box
+            closeDialogBtn.onclick = function() {
+                dialogBox.style.display = "none";
+            }
+    
+            // When the user clicks anywhere outside of the dialog box, close it
+            window.onclick = function(event) {
+                if (event.target == dialogBox) {
+                    dialogBox.style.display = "none";
+                }
+            }
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='invoice.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <title>Mart in Seconds | Invoice </title>
+</head>
+<body>
+    <header>
+        <h1 id="center-header">MART IN SECONDS <span class="right-align">CUSTOMER</span></h1>
+    </header>
+    <a href="/"><img class="logo" src="{{ url_for('static', filename='images/logo.png') }}"></img></a>
+    <div class="container">
+        <div class="info">
+            <p id="name">Name: <input id="nameInp" type="text" placeholder="Customer Name"></p>
+            <p id="mobile">Mobile No: <input id="mobileInp" type="text" placeholder="Mobile Name"></p>
+            <p id="date">Date:</p>
+            <p id="invoice">Invoice Number: 12345</p>
+        </div>
+        <div class="content">
+            <table style="width: 100%;">
+                <tr>
+                    <th>QTY</th>
+                    <th style="width: 70%;">DESCRIPTION</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+                {% for key, value in content.items() %}
+                    <tr>
+                        <td>{{ value[0] }}</td>
+                        <td style="text-align: left; text-transform: uppercase;">{{ key }}</td>
+                        {% if section == 'vegetables' %}
+                            <td>{{ value[1] }}/kg</td>
+                        {% else %}
+                            <td>{{ value[1] }}</td>
+                        {% endif %}
+                            <td>Rs {{ value[0] * value[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="total">
+            <table style="width: 100%">
+                <tr>
+                    <th>TOTAL QTY</th>
+                    <th>TOTAL AMOUNT</th>
+                </tr>
+                <tr>
+                    <td>{{ total[0] }}</td>
+                    <td>Rs {{ total[1] }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="submit">
+            <button id="submitBtn" onclick="generateInvoice('{{ store }}')">Generate Invoice</button>
+            <button id="printBtn" onclick="printInvoice()" disabled>Print Invoice</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='invoiceScript.js') }}"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+    function printInvoice() {
+        html2canvas(document.body).then(function(canvas) {
+            var img = canvas.toDataURL();
+            var win = window.open();
+            win.document.write('<img src="' + img + '"/>');
+            win.document.close();
+            win.onload = function() {
+                win.print();
+            }
+        });
+    }
+    </script>
+</body>
+</html>
